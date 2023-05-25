@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:title="transaction"
+        android:id="@+id/tabtransaction"
+        android:icon="@drawable/img_2"
+        />
+
+    <item android:title="stats"
+        android:id="@+id/tabstats"
+        android:icon="@drawable/img"
+        />
+
+    <item android:title="Add"
+        android:id="@+id/tabadd"
+        android:icon="@drawable/img_1"
+        />
+
+</menu>

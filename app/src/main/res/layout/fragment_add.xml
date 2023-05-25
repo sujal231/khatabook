@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    tools:context=".Fragment.AddFragment">
+
+
+    <com.nex3z.togglebuttongroup.SingleSelectToggleGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/idisexpense">
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/idisexpenseincome"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Income" />
+
+        <com.nex3z.togglebuttongroup.button.LabelToggle
+            android:id="@+id/idisexpenseExpense"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Expense" />
+    </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>
+
+    <EditText
+        android:id="@+id/edtamount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg"
+        android:hint="Amount"
+        android:inputType="number"
+        android:padding="7dp" />
+
+    <EditText
+        android:id="@+id/edttitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/bg"
+        android:hint="Title"
+        android:padding="7dp" />
+
+    <EditText
+        android:id="@+id/edtnote"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:background="@drawable/bg"
+        android:hint="Note"
+        android:padding="7dp" />
+
+    <Button
+        android:id="@+id/btnsave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#0493F3"
+        android:text="save" />
+
+    <!--    <androidx.recyclerview.widget.RecyclerView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:id="@+id/rcv"/>-->
+
+</LinearLayout>

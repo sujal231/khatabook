@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bgcoloritem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="#FFCDD2"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="10dp"
+    app:cardUseCompatPadding="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/idbg1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/bg5" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <FrameLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/idbg2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/bg2" />
+
+                <TextView
+                    android:id="@+id/txtid"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="id"
+                    android:textSize="15dp" />
+
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txttitle"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:text="ti"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txtnote"
+                    android:layout_width="270dp"
+                    android:layout_height="wrap_content"
+                    android:text="no"
+                    android:textSize="14dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txtamount"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:gravity="center|left"
+                android:text="no"
+                android:textColor="#66BB6A"
+                android:textSize="14dp" />
+        </LinearLayout>
+    </FrameLayout>
+</androidx.cardview.widget.CardView>
