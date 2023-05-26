@@ -17,7 +17,7 @@ class TransactionlistAdapter(list: ArrayList<listModal>) :
         var binding = itemView
 
 //        var id = binding.txtid
-//        var amount = binding.txtamount
+var amount = binding.txtamount
 //        var title = binding.txttitle
 //        var note = binding.txtnote
 //        var isExpanse = binding.idbg
@@ -52,14 +52,20 @@ class TransactionlistAdapter(list: ArrayList<listModal>) :
                 txtnote.text = note
                 txttitle.text = title
 
+
                 if (isExpense == 0) {
                     idbg2.setImageResource(R.drawable.bg3)
                     idbg1.setImageResource(R.drawable.bg5)
+                    total(amount)
                 } else {
                     txtamount.setTextColor(Color.RED)
                     idbg2.setImageResource(R.drawable.bg2)
                     idbg1.setImageResource(R.drawable.bg4)
+                    total(amount)
+
                 }
+
+
             }
         }
 
@@ -68,5 +74,13 @@ class TransactionlistAdapter(list: ArrayList<listModal>) :
     fun update(get: ArrayList<listModal>) {
         list = get
         notifyDataSetChanged()
+    }
+
+    fun total(amount: Int) {
+        var total = 0
+
+        total += amount
+
+
     }
 }

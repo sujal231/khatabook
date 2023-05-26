@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.khatabook.DbHelper
 import com.example.khatabook.TransactionlistAdapter
 import com.example.khatabook.databinding.FragmentTransactionsBinding
+import com.example.khatabook.listModal
 
 class TransactionsFragment : Fragment() {
 
@@ -26,6 +27,7 @@ class TransactionsFragment : Fragment() {
         var list = dbHelper.get()
 //        adapter.update(list)
 
+        total(list)
 
         adapter = TransactionlistAdapter(list)
 
@@ -34,6 +36,28 @@ class TransactionsFragment : Fragment() {
 
 
 
+
         return Binding.root
     }
+
+    fun total(list: ArrayList<listModal>) {
+
+        var totalin = 0
+        var totalex = 0
+        for (trans in list) {
+
+
+            if (trans.isExpense == 0) {
+                totalin += trans.amount
+            } else {
+                totalex += trans.amount
+            }
+        }
+
+        Binding.txtin.text = totalin.toString()
+        Binding.txtex.text = totalex.toString()
+        Binding.txttotel.text = (totalin - totalex).toString()
+    }
+
+
 }
