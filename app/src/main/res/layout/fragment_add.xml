@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".Fragment.AddFragment">
@@ -21,13 +22,15 @@
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:text="Income"
+            app:tbgMarkerColor="#81C784"
             />
 
         <com.nex3z.togglebuttongroup.button.LabelToggle
             android:id="@+id/idisexpenseExpense"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Expense" />
+            android:text="Expense"
+            app:tbgMarkerColor="#FF8A65"/>
     </com.nex3z.togglebuttongroup.SingleSelectToggleGroup>
 
     <EditText
@@ -64,11 +67,8 @@
         android:layout_gravity="center"
         android:backgroundTint="#0493F3"
         android:text="save"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        />
 
-    <!--    <androidx.recyclerview.widget.RecyclerView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:id="@+id/rcv"/>-->
 
 </LinearLayout>
