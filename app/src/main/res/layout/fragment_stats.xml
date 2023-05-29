@@ -8,57 +8,122 @@
     android:orientation="vertical">
 
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardBackgroundColor="#FFCDD2"
-        app:cardCornerRadius="5dp"
-        app:cardElevation="10dp"
-        app:cardUseCompatPadding="true">
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="10dp">
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
 
-            <TextView
-                android:id="@+id/txtin"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="tvv"
-                android:textColor="#388E3C"
-                android:textSize="18dp" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/txtex"
-                android:layout_width="wrap_content"
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Income"
+                    android:textColor="#388E3C"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txtin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="tvv"
+                    android:textColor="#388E3C"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="tvv"
-                android:textColor="#D32F2F"
-                android:textSize="18dp" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-            <TextView
-                android:id="@+id/txttotel"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Expans"
+                    android:textColor="#D32F2F"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/txtex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="tvv"
+                    android:textColor="#D32F2F"
+                    android:textSize="18dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="10dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="tvv"
-                android:textSize="18dp"
-                android:textStyle="bold" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="10dp">
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Total"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/txttotel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="tvv"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/piechart"
         android:layout_width="300dp"
+        android:layout_gravity="center"
         android:layout_height="400dp" />
 
 

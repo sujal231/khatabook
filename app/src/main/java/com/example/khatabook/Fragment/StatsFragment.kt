@@ -66,13 +66,13 @@ class StatsFragment : Fragment() {
         //initializing data
         val typeAmountMap: MutableMap<String, Int> = HashMap()
 
-        typeAmountMap["Income"] = totalex
-        typeAmountMap["Expense"] = totalin
+        typeAmountMap["Income"] = totalin
+        typeAmountMap["Expense"] = totalex
 
 
         //initializing colors for the entries
         val colors = ArrayList<Int>()
-        colors.add(Color.parseColor("#304567"))
+        colors.add(Color.parseColor("#f57171"))
         colors.add(Color.parseColor("#309967"))
 
         //input data and fit data into pie chart entry

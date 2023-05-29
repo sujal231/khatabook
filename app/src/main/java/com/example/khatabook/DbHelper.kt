@@ -13,9 +13,11 @@ var table_name = "list"
 class DbHelper(context: Context?) : SQLiteOpenHelper(context, "myData.db", null, 1) {
 
 
+    var id = "id"
+
     override fun onCreate(p0: SQLiteDatabase?) {
         var SQL =
-            "CREATE TABLE $table_name(ID INTEGER PRIMARY KEY AUTOINCREMENT,Amount INTEGER,title TEXT,note TEXT,isExpanse INTEGER)"
+            "CREATE TABLE $table_name($id INTEGER PRIMARY KEY AUTOINCREMENT,Amount INTEGER,title TEXT,note TEXT,isExpanse INTEGER)"
         p0?.execSQL(SQL)
     }
 
@@ -57,12 +59,34 @@ class DbHelper(context: Context?) : SQLiteOpenHelper(context, "myData.db", null,
             var note = cursor.getString(3)
             var isExpanse = cursor.getInt(4)
 
-            var model = listModal(id, amount, title, note,isExpanse)
+            var model = listModal(id, amount, title, note, isExpanse)
             Transactionlist.add(model)
             cursor.moveToNext()
         }
 
         return Transactionlist
+    }
+
+    fun updateTrans(listModal: listModal) {
+        var db = writableDatabase
+        var values = ContentValues().apply {
+            listModal.apply {
+                put("Amount", amount)
+                put("title", title)
+                put("note", note)
+                put("isExpanse", isExpense)
+
+
+            }
+        }
+
+        db.update(table_name,values,"id=${listModal.id}",null)
+    }
+
+    fun delete(id:Int)
+    {
+        var db = writableDatabase
+        db.delete(table_name,"id=$id",null)
     }
 }
 

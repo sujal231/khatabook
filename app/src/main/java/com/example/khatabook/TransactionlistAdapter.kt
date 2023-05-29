@@ -1,30 +1,39 @@
 package com.example.khatabook
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Color
 import android.view.LayoutInflater
+import android.view.MenuItem
+import android.view.View
+import android.view.View.OnLongClickListener
 import android.view.ViewGroup
+import android.widget.PopupMenu
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.khatabook.databinding.TableBinding
 
 
-class TransactionlistAdapter(list: ArrayList<listModal>) :
+class TransactionlistAdapter(
+    updata: (listModal) -> Unit,
+    list: ArrayList<listModal>,
+    Delete: (Int) -> Unit
+) :
     RecyclerView.Adapter<TransactionlistAdapter.listHolader>() {
     var list = list
-
+    lateinit var context: Context
+    var updata = updata
+    var delete = Delete
 
     class listHolader(itemView: TableBinding) : ViewHolder(itemView.root) {
         var binding = itemView
 
-//        var id = binding.txtid
-var amount = binding.txtamount
-//        var title = binding.txttitle
-//        var note = binding.txtnote
-//        var isExpanse = binding.idbg
+
     }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): listHolader {
+        context = parent.context
         var binding = TableBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return listHolader(binding)
     }
@@ -34,16 +43,11 @@ var amount = binding.txtamount
         return list.size
     }
 
-    override fun onBindViewHolder(holder: listHolader, position: Int) {
-//        holder.id.text = list.get(position).id.toString()
-//        holder.amount.text = list.get(position).amount.toString()
-//        holder.title.text = list.get(position).title
-//        holder.note.text = list.get(position).note
-//        holder.isExpanse.te
-//
-//        if (isExpanse == 0) {
-//            holder.binding.txtamount.setTextColor(Color.GREEN)
-//        }
+    override fun onBindViewHolder(
+        holder: listHolader,
+        @SuppressLint("RecyclerView") position: Int
+    ) {
+
 
         holder.binding.apply {
             list.get(position).apply {
@@ -62,15 +66,37 @@ var amount = binding.txtamount
                     idbg2.setImageResource(R.drawable.bg2)
                     idbg1.setImageResource(R.drawable.bg4)
                     total(amount)
-
                 }
-
 
             }
         }
 
-    }
+        holder.itemView.setOnLongClickListener(object : OnLongClickListener {
+            override fun onLongClick(p0: View?): Boolean {
 
+                var popupMenu = PopupMenu(context, holder.itemView)
+                popupMenu.menuInflater.inflate(R.menu.delete, popupMenu.menu)
+
+                popupMenu.setOnMenuItemClickListener(object : PopupMenu.OnMenuItemClickListener {
+                    override fun onMenuItemClick(p0: MenuItem?): Boolean {
+
+                        if (p0?.itemId == R.id.update) {
+                            updata.invoke(list.get(position))
+                        }
+
+                        if (p0?.itemId == R.id.delete) {
+                            delete.invoke(list.get(position).id)
+                        }
+                        return true
+                    }
+                })
+                popupMenu.show()
+                return true
+            }
+        })
+
+
+    }
     fun update(get: ArrayList<listModal>) {
         list = get
         notifyDataSetChanged()
