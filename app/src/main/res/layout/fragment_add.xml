@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
+    android:padding="16dp"
     tools:context=".Fragment.AddFragment">
 
 
@@ -13,13 +12,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/idisexpense">
+        android:id="@+id/idisexpense"
+        android:layout_margin="20dp"
+        >
 
         <com.nex3z.togglebuttongroup.button.LabelToggle
             android:id="@+id/idisexpenseincome"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:text="Income" />
+            android:text="Income"
+            />
 
         <com.nex3z.togglebuttongroup.button.LabelToggle
             android:id="@+id/idisexpenseExpense"
@@ -61,7 +63,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:backgroundTint="#0493F3"
-        android:text="save" />
+        android:text="save"
+        android:layout_marginTop="10dp"/>
 
     <!--    <androidx.recyclerview.widget.RecyclerView-->
     <!--        android:layout_width="match_parent"-->
