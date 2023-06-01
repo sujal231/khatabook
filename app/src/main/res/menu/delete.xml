@@ -5,6 +5,8 @@
         android:title="Delete"/>
     <item android:id="@+id/update"
         android:title="Update"/>
+    <item android:id="@+id/info"
+        android:title="Info"/>
 
 
 </menu>

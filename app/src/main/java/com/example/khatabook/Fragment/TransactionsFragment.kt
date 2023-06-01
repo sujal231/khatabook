@@ -11,6 +11,7 @@ import com.example.khatabook.DbHelper
 import com.example.khatabook.TransactionlistAdapter
 import com.example.khatabook.databinding.DialogBinding
 import com.example.khatabook.databinding.FragmentTransactionsBinding
+import com.example.khatabook.databinding.InfoDialogBinding
 import com.example.khatabook.listModal
 
 class TransactionsFragment : Fragment() {
@@ -38,7 +39,7 @@ class TransactionsFragment : Fragment() {
 
         }, list, {
             delete(it)
-        })
+        }, { info(it) })
 
 //        adapter = TransactionlistAdapter(list)
         Binding.rcvadd.layoutManager = LinearLayoutManager(context)
@@ -49,6 +50,32 @@ class TransactionsFragment : Fragment() {
 
         return Binding.root
     }
+
+    public fun info(it: listModal) {
+
+        var dialog = Dialog(requireContext())
+        var b = InfoDialogBinding.inflate(layoutInflater)
+
+
+
+
+        if (it.isExpense == 0) {
+            b.you2.setText(it.title)
+            b.you.setText("You")
+        } else {
+
+            b.you2.setText("You")
+            b.you.setText(it.title)
+        }
+
+
+
+
+        dialog.setContentView(b.root)
+        dialog.show()
+
+    }
+
 
     private fun delete(it: Int) {
 

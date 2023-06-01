@@ -17,12 +17,14 @@ import com.example.khatabook.databinding.TableBinding
 class TransactionlistAdapter(
     updata: (listModal) -> Unit,
     list: ArrayList<listModal>,
-    Delete: (Int) -> Unit
+    Delete: (Int) -> Unit,
+    info: (listModal) -> Unit
 ) :
     RecyclerView.Adapter<TransactionlistAdapter.listHolader>() {
     var list = list
     lateinit var context: Context
     var updata = updata
+    var info = info
     var delete = Delete
 
     class listHolader(itemView: TableBinding) : ViewHolder(itemView.root) {
@@ -86,6 +88,11 @@ class TransactionlistAdapter(
 
                         if (p0?.itemId == R.id.delete) {
                             delete.invoke(list.get(position).id)
+                        }
+
+                        if(p0?.itemId == R.id.info)
+                        {
+                            info.invoke(list.get(position))
                         }
                         return true
                     }
