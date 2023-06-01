@@ -1,0 +1,7 @@
+# khatabook![Screenshot_20230601-142201](https://github.com/sujal231/khatabook/assets/115794420/a5b8c623-22ca-4253-829c-fc62deb6629e)
+![Screenshot_20230601-142213](https://github.com/sujal231/khatabook/assets/115794420/ba9c21bb-6499-4931-b07b-34f1ae653228)
+![Screenshot_20230601-142220](https://github.com/sujal231/khatabook/assets/115794420/e5c4f892-51b3-43b0-80fb-e5e0a6ff9102)
+![Screenshot_20230601-142232](https://github.com/sujal231/khatabook/assets/115794420/aecd7e2a-bc73-4303-8593-b9a67309a1d1)
+![Screenshot_20230601-142748](https://github.com/sujal231/khatabook/assets/115794420/d8fa2d41-c330-4c32-9f19-fcea1d2060bf)
+![Screenshot_20230601-142748](https://github.com/sujal231/khatabook/assets/115794420/d4c5e818-afdc-47d2-a33c-16e20b1b0e91)
+![Screenshot_20230601-142727](https://github.com/sujal231/khatabook/assets/115794420/5283d698-a516-430f-b036-c601a784a605)
