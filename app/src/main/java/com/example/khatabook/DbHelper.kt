@@ -76,7 +76,6 @@ class DbHelper(context: Context?) : SQLiteOpenHelper(context, "myData.db", null,
                 put("note", note)
                 put("isExpanse", isExpense)
 
-
             }
         }
 

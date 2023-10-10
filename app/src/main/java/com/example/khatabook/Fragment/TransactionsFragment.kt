@@ -91,6 +91,7 @@ class TransactionsFragment : Fragment() {
         bind.edtamount.setText(listModal.amount.toString())
         bind.edtnote.setText(listModal.note.toString())
         bind.edttitle.setText(listModal.title.toString())
+
         bind.btnsave.setOnClickListener {
 
 
